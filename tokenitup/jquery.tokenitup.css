@@ -1,0 +1,85 @@
+.tokenitup-help-text {
+    font-style: italic;
+    margin: 0;
+    color: gray;
+}
+
+input.tokenitup-input {
+    color: #000000;
+}
+
+input.tokenitup-input-active {
+}
+
+input.tokenitup-input-inactive {
+    color: #bbbbbb !important;
+    font-weight: normal;
+}
+
+li.tokenitup-item {
+    list-type: none;
+    color: #36393D;
+    background-color: #C3D9FF;
+    border: #36393D 1px solid;
+    display: inline-block;
+    margin: 0px 10px 10px 0px;
+    padding: 4px 2px 4px 6px;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px;
+}
+
+span.tokenitup-item-label {
+}
+
+button.tokenitup-item-remove {
+    width: 24px;
+    height: 24px;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    background-color: #F9F7ED;
+    border: #36393D 1px solid;
+    color: #36393D;
+    margin: 0 0 0 5px;
+    cursor: pointer;
+}
+button.tokenitup-item-remove:hover {
+    background-color: #36393D;
+    border: #F9F7ED 1px solid;
+    color: #F9F7ED;
+}
+
+.wide ul.tokenitup-list { /* To play nice with the django admin 'wide' class */
+    margin-left: 15em;
+}
+
+ul.tokenitup-list {
+    padding: 0px;
+}
+
+button.tokenitup-add {
+    margin-left: 5px;
+}
+
+button.tokenitup-remove-all {
+    margin-top: 5px;
+}
+
+.tokenitup-empty {
+    color: gray;
+}
+
+.tokenitup-loading {
+    background: white url('loading.gif') left center no-repeat;
+    height:30px;
+    width: 30px;
+}
+
+div.tokenitup-loading {
+    background: transparent url('loading.gif') left center no-repeat;
+}
+
+/* Autocomplete */
+input.ui-autocomplete-loading {
+    background: white url('loading.gif') right center no-repeat;
+}
+input.ui-autocomplete-input {
+    width: 200px !important;
+}
