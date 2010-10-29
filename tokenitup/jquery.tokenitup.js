@@ -56,7 +56,8 @@
                     label: $.highlight_term(term, resultItem),
                     value: resultItem
                 };
-            }
+            },
+            postProcessField: undefined
         }, settings || {});
 
 
@@ -94,11 +95,7 @@
                 var actual_value = $(this).data("actual_value");
                 field_value = field_value + options.separator + actual_value;
             });
-            /* Note: The following line was intentionally commented out to compensate the fact that if there is no comma (provided the separator is the comma)
-               in the text field, then the Django app (either django-taggit or django-tagging) will count the space as a separator.
-               This feels like a dirty fix and maybe we should do a proper fix for the long term. For example, currently you cannot have a comma into a tag, so
-               we should at some stage enable the use of quotes. */
-            //field_value = field_value.substr(1, field_value.length); // Remove last separator
+            field_value = field_value.substr(1, field_value.length); // Remove last separator
             $actualField.val(field_value);
             if (options.allowRemoveAll) {
                 // Show "Remove All" button only if there are selected items
@@ -107,6 +104,10 @@
 
             $selectedItems.toggle(field_value != "");
             $emptyMessage.toggle(field_value == "");
+            
+            if (options.postProcessField) {
+                options.postProcessField($actualField);
+            }
         };
 
         // Constructor -------------------------------------------------------
