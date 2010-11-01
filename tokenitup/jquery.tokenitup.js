@@ -50,6 +50,7 @@
             removeTooltipText: "Remove",
             removeLabel: "x",
             removeAllLabel: "Remove All",
+            maximumItems: -1,
             processOneResultItem: function(term, resultItem) {
                 // Highlight term by default
                 return {
@@ -78,6 +79,11 @@
                 $newItem.remove();
                 _refreshActualField();
             });
+            
+            if (options.maximumItems > 0 && $selectedItems.children().length == options.maximumItems) {
+                $selectedItems.children().first().remove();
+            }
+            
             if (animate) {
                 $selectedItems.append($newItem.fadeIn('slow'));
             }
