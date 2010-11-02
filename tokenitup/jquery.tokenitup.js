@@ -177,7 +177,7 @@
         //$element.removeAttr('name'); // Remove name attribute so the field doesn't get sent with the form
         //$element.hide();
         var $actualField = $element; //TODO: get rid of that $actualField variable.
-        $actualField.hide();
+        $actualField.addClass("tokenitup-actual-input").hide();
         $firstObject.after($selectedItems, $emptyMessage, $actualField);
 
         // Initialise "Remove All" button
